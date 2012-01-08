@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    This file is part of "JODReports :: Testing Support Library".
+    This file is part of "JODReports Testing Support Library".
 
     Copyright (C) 2011-2012 Ansgar Konermann and contributing authors.
 
@@ -35,7 +35,7 @@
   <artifactId>jodreports-test</artifactId>
   <version>0.1.0-SNAPSHOT</version>
 
-  <name>JODReports :: Testing Support Library</name>
+  <name>JODReports :: Testing</name>
   <description>A java library providing test superclasses and utilities to perform unit-testing of documents generated with JODReports.</description>
 
   <licenses>
@@ -68,7 +68,7 @@
             <exclude>README*</exclude>
           </excludes>
           <properties>
-            <moduleName>${project.name}</moduleName>
+            <moduleName>JODReports Testing Support Library</moduleName>
           </properties>
         </configuration>
         <executions>

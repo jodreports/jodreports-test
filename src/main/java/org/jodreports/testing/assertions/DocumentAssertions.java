@@ -1,5 +1,5 @@
 /**
- * This file is part of "JODReports :: Testing Support Library".
+ * This file is part of "JODReports Testing Support Library".
  *
  * Copyright (C) 2011-2012 Ansgar Konermann and contributing authors.
  *

@@ -17,7 +17,7 @@
     See the GNU Lesser General Public License for more details.
 
     You should have received a copy of the GNU General Public License along
-    with this program. If not, see <http://www.gnu.org/licenses/>.
+    with this program. If not, see http://www.gnu.org/licenses/
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -66,6 +66,8 @@
             <exclude>**/*.odt</exclude>
             <exclude>LICENSE*</exclude>
             <exclude>README*</exclude>
+            <exclude>release.properties</exclude>
+            <exclude>pom.xml.releaseBackup</exclude>
           </excludes>
           <properties>
             <moduleName>JODReports Testing Support Library</moduleName>

@@ -153,7 +153,7 @@
       <timezone>+1</timezone>
     </developer>
     <developer>
-      <id>tg</id>
+      <id>TGe</id>
       <roles>
         <role>developer</role>
       </roles>
@@ -170,6 +170,9 @@
     </contributor>
     <contributor>
       <name>TOe</name>
+    </contributor>
+    <contributor>
+      <name>JF</name>
     </contributor>
   </contributors>
 

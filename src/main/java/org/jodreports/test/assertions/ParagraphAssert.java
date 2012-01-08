@@ -17,25 +17,31 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing.assertions;
+package org.jodreports.test.assertions;
 
-import org.fest.assertions.Assertions;
 import org.fest.assertions.GenericAssert;
-import org.odftoolkit.simple.table.Column;
+import org.odftoolkit.simple.common.TextExtractor;
+import org.odftoolkit.simple.text.Paragraph;
 
-import static org.jodreports.testing.assertions.DocumentAssertions.assertThat;
+import static org.fest.assertions.Assertions.assertThat;
 
-public class ColumnAssert extends GenericAssert<ColumnAssert, Column> {
+public class ParagraphAssert extends GenericAssert<ParagraphAssert, Paragraph> {
 
-  protected ColumnAssert(Column actual) {
-    super(ColumnAssert.class, actual);
+  public ParagraphAssert(Paragraph actual) {
+    super(ParagraphAssert.class, actual);
   }
 
-  public void showsText(String... expectedCellTexts) {
-    Assertions.assertThat(actual.getCellCount()).as("number of cells").isEqualTo(expectedCellTexts.length);
+  public ParagraphAssert endsWith(String expected) {
+    isDisplayed();
+    assertThat(getTextContent()).endsWith(expected);
+    return myself;
+  }
 
-    for (int i = 0; i < expectedCellTexts.length; i++) {
-      assertThat(actual.getCellByIndex(i)).as("Cell at index " + i).showsText(expectedCellTexts[i]);
-    }
+  private String getTextContent() {
+    return TextExtractor.getText(actual.getOdfElement());
+  }
+
+  private void isDisplayed() {
+    DocumentAssertions.assertThat(actual.getOdfElement()).isDisplayed();
   }
 }

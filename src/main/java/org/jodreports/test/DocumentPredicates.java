@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing;
+package org.jodreports.test;
 
-import org.jodreports.testing.simpleodfextensions.TextReference;
+import org.jodreports.test.simpleodfextensions.TextReference;
 import org.odftoolkit.simple.table.Table;
 import org.odftoolkit.simple.text.Section;
 

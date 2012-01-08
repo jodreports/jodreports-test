@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing.simpleodfextensions;
+package org.jodreports.test.simpleodfextensions;
 
 import org.odftoolkit.simple.Component;
 import org.odftoolkit.simple.TextDocument;
@@ -25,8 +25,8 @@ import org.odftoolkit.simple.TextDocument;
 import java.util.Collection;
 
 import static org.fest.assertions.Assertions.assertThat;
-import static org.jodreports.testing.DocumentElementFilter.filter;
-import static org.jodreports.testing.DocumentPredicates.withReferenceName;
+import static org.jodreports.test.DocumentElementFilter.filter;
+import static org.jodreports.test.DocumentPredicates.withReferenceName;
 
 ///** @deprecated to be moved to simple-odf api. */
 //@Deprecated

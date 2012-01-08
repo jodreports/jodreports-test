@@ -17,22 +17,25 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing.assertions;
+package org.jodreports.test.assertions;
 
 import org.fest.assertions.Assertions;
 import org.fest.assertions.GenericAssert;
-import org.jodreports.testing.simpleodfextensions.TextReference;
+import org.odftoolkit.simple.table.Table;
 
-public class TextReferenceAssert extends GenericAssert<TextReferenceAssert, TextReference> {
+public class TableAssert extends GenericAssert<TableAssert, Table> {
 
-  public TextReferenceAssert(TextReference textReference) {
-    super(TextReferenceAssert.class, textReference);
+  TableAssert(Table actual) {
+    super(TableAssert.class, actual);
   }
 
-  public void showsText(String expected) {
-    String textContent = actual.getTextContent();
-    Assertions.assertThat(textContent).isEqualTo(expected);
+  public TableAssert hasRowCount(int expectedRows) {
+    Assertions.assertThat(actual.getRowCount()).as("Row count of table '" + actual.getTableName() + "'").isEqualTo(expectedRows);
+    return this;
+  }
 
-    DocumentAssertions.assertThat(actual.getStylableElement()).isDisplayed();
+  public TableAssert hasColumnCount(int expectedColumns) {
+    Assertions.assertThat(actual.getColumnCount()).as("Column count of table '" + actual.getTableName() + "'").isEqualTo(expectedColumns);
+    return this;
   }
 }

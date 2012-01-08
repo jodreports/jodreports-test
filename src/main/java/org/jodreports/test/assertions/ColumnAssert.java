@@ -17,14 +17,25 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing;
+package org.jodreports.test.assertions;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+import org.fest.assertions.Assertions;
+import org.fest.assertions.GenericAssert;
+import org.odftoolkit.simple.table.Column;
 
-public class InputStreamFactory {
+import static org.jodreports.test.assertions.DocumentAssertions.assertThat;
 
-  public static ByteArrayInputStream from(ByteArrayOutputStream documentInstance) {
-    return new ByteArrayInputStream(documentInstance.toByteArray());
+public class ColumnAssert extends GenericAssert<ColumnAssert, Column> {
+
+  protected ColumnAssert(Column actual) {
+    super(ColumnAssert.class, actual);
+  }
+
+  public void showsText(String... expectedCellTexts) {
+    Assertions.assertThat(actual.getCellCount()).as("number of cells").isEqualTo(expectedCellTexts.length);
+
+    for (int i = 0; i < expectedCellTexts.length; i++) {
+      assertThat(actual.getCellByIndex(i)).as("Cell at index " + i).showsText(expectedCellTexts[i]);
+    }
   }
 }

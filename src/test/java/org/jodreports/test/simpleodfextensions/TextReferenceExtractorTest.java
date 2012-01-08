@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing.simpleodfextensions;
+package org.jodreports.test.simpleodfextensions;
 
-import org.jodreports.testing.JodReportsTest;
+import org.jodreports.test.JodReportsTest;
 import org.odftoolkit.simple.TextDocument;
 import org.odftoolkit.simple.table.Table;
 import org.odftoolkit.simple.text.Paragraph;
@@ -32,7 +32,7 @@ import java.net.URL;
 import java.util.Collection;
 
 import static org.fest.assertions.Assertions.assertThat;
-import static org.jodreports.testing.simpleodfextensions.TextDocumentFunctions.getTextReferenceByName;
+import static org.jodreports.test.simpleodfextensions.TextDocumentFunctions.getTextReferenceByName;
 import static org.odftoolkit.simple.TextDocument.loadDocument;
 
 public class TextReferenceExtractorTest extends JodReportsTest {

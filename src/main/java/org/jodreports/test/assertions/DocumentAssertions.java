@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing.assertions;
+package org.jodreports.test.assertions;
 
 import org.fest.assertions.Assertions;
-import org.jodreports.testing.simpleodfextensions.TextReference;
+import org.jodreports.test.simpleodfextensions.TextReference;
 import org.odftoolkit.odfdom.dom.element.OdfStylableElement;
 import org.odftoolkit.simple.TextDocument;
 import org.odftoolkit.simple.table.Cell;

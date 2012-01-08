@@ -17,9 +17,23 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing;
+package org.jodreports.test.assertions;
 
-public interface Predicate<ITEM_TYPE> {
+import org.fest.assertions.GenericAssert;
+import org.odftoolkit.odfdom.dom.element.text.TextHElement;
 
-  boolean isSatisfiedFor(ITEM_TYPE item);
+import java.util.Collection;
+
+import static org.fest.assertions.Assertions.assertThat;
+
+public class HeaderAssert extends GenericAssert<HeaderAssert, Collection<TextHElement>> {
+
+  public HeaderAssert(Collection<TextHElement> actual) {
+    super(HeaderAssert.class, actual);
+  }
+
+  public HeaderAssert hasSize(int size) {
+    assertThat(actual).hasSize(size);
+    return myself;
+  }
 }

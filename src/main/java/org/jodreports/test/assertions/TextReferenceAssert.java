@@ -17,31 +17,22 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing.assertions;
+package org.jodreports.test.assertions;
 
+import org.fest.assertions.Assertions;
 import org.fest.assertions.GenericAssert;
-import org.odftoolkit.simple.common.TextExtractor;
-import org.odftoolkit.simple.text.Paragraph;
+import org.jodreports.test.simpleodfextensions.TextReference;
 
-import static org.fest.assertions.Assertions.assertThat;
+public class TextReferenceAssert extends GenericAssert<TextReferenceAssert, TextReference> {
 
-public class ParagraphAssert extends GenericAssert<ParagraphAssert, Paragraph> {
-
-  public ParagraphAssert(Paragraph actual) {
-    super(ParagraphAssert.class, actual);
+  public TextReferenceAssert(TextReference textReference) {
+    super(TextReferenceAssert.class, textReference);
   }
 
-  public ParagraphAssert endsWith(String expected) {
-    isDisplayed();
-    assertThat(getTextContent()).endsWith(expected);
-    return myself;
-  }
+  public void showsText(String expected) {
+    String textContent = actual.getTextContent();
+    Assertions.assertThat(textContent).isEqualTo(expected);
 
-  private String getTextContent() {
-    return TextExtractor.getText(actual.getOdfElement());
-  }
-
-  private void isDisplayed() {
-    DocumentAssertions.assertThat(actual.getOdfElement()).isDisplayed();
+    DocumentAssertions.assertThat(actual.getStylableElement()).isDisplayed();
   }
 }

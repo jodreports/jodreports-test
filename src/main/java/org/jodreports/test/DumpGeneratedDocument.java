@@ -17,25 +17,22 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing.assertions;
+package org.jodreports.test;
 
-import org.fest.assertions.Assertions;
-import org.fest.assertions.GenericAssert;
-import org.odftoolkit.simple.table.Table;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 
-public class TableAssert extends GenericAssert<TableAssert, Table> {
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-  TableAssert(Table actual) {
-    super(TableAssert.class, actual);
-  }
+/**
+ * Instructs JodReportsTest to dump the generated ODT document inside {@link JodReportsTest#instanceData} into a file. If no
+ * filename is specified, a generated one will be used, otherwise the one specified as {@link #toFile()}.
+ */
+@Retention(RUNTIME)
+@Target(METHOD)
+public @interface DumpGeneratedDocument {
 
-  public TableAssert hasRowCount(int expectedRows) {
-    Assertions.assertThat(actual.getRowCount()).as("Row count of table '" + actual.getTableName() + "'").isEqualTo(expectedRows);
-    return this;
-  }
-
-  public TableAssert hasColumnCount(int expectedColumns) {
-    Assertions.assertThat(actual.getColumnCount()).as("Column count of table '" + actual.getTableName() + "'").isEqualTo(expectedColumns);
-    return this;
-  }
+  /** Name of file to dump the generated document instance into. */
+  String toFile() default "";
 }

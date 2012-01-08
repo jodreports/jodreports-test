@@ -17,22 +17,9 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.jodreports.testing;
+package org.jodreports.test;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+public interface Predicate<ITEM_TYPE> {
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
-/**
- * Instructs JodReportsTest to dump the generated ODT document inside {@link JodReportsTest#instanceData} into a file. If no
- * filename is specified, a generated one will be used, otherwise the one specified as {@link #toFile()}.
- */
-@Retention(RUNTIME)
-@Target(METHOD)
-public @interface DumpGeneratedDocument {
-
-  /** Name of file to dump the generated document instance into. */
-  String toFile() default "";
+  boolean isSatisfiedFor(ITEM_TYPE item);
 }

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    This file is part of "JODReports :: Testing Support Library".
+
+    Copyright (C) 2011-2012 Ansgar Konermann and contributing authors.
+
+    This program is free software: you can redistribute it and/or modify it
+    under the terms of the  GNU Lesser General Public License  as published
+    by the  Free Software Foundation,  either version 3  of the License, or
+    (at your option) any later version.
+
+    This program is  distributed in  the hope that  it will be  useful, but
+    WITHOUT   ANY   WARRANTY;   without   even   the  implied  warranty  of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+    See the GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>de.lightful.poms</groupId>
+    <artifactId>java-library</artifactId>
+    <version>6</version>
+  </parent>
+
+  <groupId>org.jodreports</groupId>
+  <artifactId>jodreports-testing</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+
+  <name>JODReports :: Testing Support Library</name>
+
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <version>1.9.0</version>
+        <configuration>
+          <header>${basedir}/src/licenses/LGPL-HEADER.TXT</header>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <strictCheck>true</strictCheck>
+          <useDefaultExcludes>false</useDefaultExcludes>
+          <excludes>
+            <exclude>target/**</exclude>
+            <exclude>src/licenses/*.*</exclude>
+            <exclude>**/.git</exclude>
+            <exclude>**/.git/**</exclude>
+            <exclude>**/*.odt</exclude>
+            <exclude>LICENSE.TXT</exclude>
+          </excludes>
+          <properties>
+            <moduleName>${project.name}</moduleName>
+          </properties>
+        </configuration>
+        <executions>
+          <execution>
+            <id>check-license</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>10.0-rc1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.easytesting</groupId>
+      <artifactId>fest-assert</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>5.14.9</version>
+      <!--<scope>test</scope>-->
+      <!--<scope>provided</scope>-->
+    </dependency>
+    <dependency>
+      <groupId>com.artofsolving</groupId>
+      <artifactId>jodconverter</artifactId>
+      <version>2.2.1</version>
+      <!--<scope>provided</scope>-->
+    </dependency>
+    <dependency>
+      <groupId>net.sf.jodreports</groupId>
+      <artifactId>jodreports</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.odftoolkit</groupId>
+      <artifactId>simple-odf</artifactId>
+      <version>0.5.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.odftoolkit</groupId>
+      <artifactId>odfdom-java</artifactId>
+      <version>0.8.7</version>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.1.0.Final</version>
+      <!--<exclusions>-->
+      <!--<exclusion>-->
+      <!--<groupId>org.slf4j</groupId>-->
+      <!--<artifactId>slf4j-api</artifactId>-->
+      <!--</exclusion>-->
+      <!--</exclusions>-->
+    </dependency>
+  </dependencies>
+
+  <developers>
+    <developer>
+      <id>ansgarkonermann</id>
+      <name>Ansgar Konermann</name>
+      <email>ansgar.konermann@googlemail.com</email>
+      <url>http://passion.forco.de/</url>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>tg</id>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <contributors>
+    <contributor>
+      <name>LHa</name>
+    </contributor>
+    <contributor>
+      <name>BSt</name>
+    </contributor>
+    <contributor>
+      <name>TOe</name>
+    </contributor>
+  </contributors>
+
+  <mailingLists>
+    <mailingList>
+      <name>User Mailing List</name>
+      <post>jodreports-users@googlegroups.com</post>
+      <archive>https://groups.google.com/forum/#!forum/jodreports-users</archive>
+      <subscribe>https://groups.google.com/group/jodreports-users/subscribe</subscribe>
+      <unsubscribe>https://groups.google.com/group/jodreports-users/subscribe</unsubscribe>
+    </mailingList>
+    <mailingList>
+      <name>Developers Mailing List</name>
+      <post>jodreports-dev@googlegroups.com</post>
+      <archive>https://groups.google.com/forum/#!forum/jodreports-dev</archive>
+      <subscribe>https://groups.google.com/group/jodreports-dev/subscribe</subscribe>
+      <unsubscribe>https://groups.google.com/group/jodreports-dev/subscribe</unsubscribe>
+    </mailingList>
+  </mailingLists>
+
+  <issueManagement>
+    <system>Youtrack</system>
+    <url>https://track.meba.be/youtrack/issues/JODRP</url>
+  </issueManagement>
+
+</project>

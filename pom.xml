@@ -201,9 +201,9 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:jodreports/jodreports-testing.git</connection>
-    <developerConnection>scm:git:git@github.com:jodreports/jodreports-testing.git</developerConnection>
-    <url>https://github.com/jodreports/jodreports-testing</url>
+    <connection>scm:git:git@github.com:jodreports/jodreports-test.git</connection>
+    <developerConnection>scm:git:git@github.com:jodreports/jodreports-test.git</developerConnection>
+    <url>https://github.com/jodreports/jodreports-test</url>
   </scm>
 
 </project>

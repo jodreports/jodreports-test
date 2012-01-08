@@ -32,10 +32,11 @@
   </parent>
 
   <groupId>org.jodreports</groupId>
-  <artifactId>jodreports-testing</artifactId>
+  <artifactId>jodreports-test</artifactId>
   <version>0.1.0-SNAPSHOT</version>
 
   <name>JODReports :: Testing Support Library</name>
+  <description>A java library providing test superclasses and utilities to perform unit-testing of documents generated with JODReports.</description>
 
   <licenses>
     <license>
@@ -60,9 +61,11 @@
             <exclude>target/**</exclude>
             <exclude>src/licenses/*.*</exclude>
             <exclude>**/.git</exclude>
+            <exclude>**/.gitignore</exclude>
             <exclude>**/.git/**</exclude>
             <exclude>**/*.odt</exclude>
-            <exclude>LICENSE.TXT</exclude>
+            <exclude>LICENSE*</exclude>
+            <exclude>README*</exclude>
           </excludes>
           <properties>
             <moduleName>${project.name}</moduleName>
@@ -191,5 +194,11 @@
     <system>Youtrack</system>
     <url>https://track.meba.be/youtrack/issues/JODRP</url>
   </issueManagement>
+
+  <scm>
+    <connection>scm:git:git@github.com:jodreports/jodreports-testing.git</connection>
+    <developerConnection>scm:git:git@github.com:jodreports/jodreports-testing.git</developerConnection>
+    <url>https://github.com/jodreports/jodreports-testing</url>
+  </scm>
 
 </project>

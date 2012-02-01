@@ -19,8 +19,8 @@
  */
 package org.jodreports.test;
 
-import net.sf.jooreports.templates.DocumentTemplate;
-import net.sf.jooreports.templates.DocumentTemplateException;
+import org.jodreports.templates.DocumentTemplate;
+import org.jodreports.templates.DocumentTemplateException;
 import org.odftoolkit.simple.TextDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

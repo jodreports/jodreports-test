@@ -33,7 +33,7 @@
 
   <groupId>org.jodreports</groupId>
   <artifactId>jodreports-test</artifactId>
-  <version>0.2.0-SNAPSHOT</version>
+  <version>3.0.0-SNAPSHOT</version>
 
   <name>JODReports :: Testing</name>
   <description>A java library providing test superclasses and utilities to perform unit-testing of documents generated with JODReports.</description>
@@ -112,9 +112,9 @@
       <!--<scope>provided</scope>-->
     </dependency>
     <dependency>
-      <groupId>net.sf.jodreports</groupId>
-      <artifactId>jodreports</artifactId>
-      <version>2.4.0</version>
+      <groupId>org.jodreports</groupId>
+      <artifactId>jodreports-library</artifactId>
+      <version>3.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.odftoolkit</groupId>
@@ -162,6 +162,11 @@
       </roles>
       <timezone>+1</timezone>
     </developer>
+    <developer>
+      <id>jacobf</id>
+      <name>Jacob Fahrenkrug</name>
+      <email>jacob.fahrenkrug@googlemail.com</email>
+    </developer>
   </developers>
 
   <contributors>
@@ -173,9 +178,6 @@
     </contributor>
     <contributor>
       <name>TOe</name>
-    </contributor>
-    <contributor>
-      <name>JF</name>
     </contributor>
   </contributors>
 

@@ -27,8 +27,8 @@
 
   <parent>
     <groupId>de.lightful.poms</groupId>
-    <artifactId>java-library</artifactId>
-    <version>6</version>
+    <artifactId>standard-oss-build</artifactId>
+    <version>2</version>
   </parent>
 
   <groupId>org.jodreports</groupId>

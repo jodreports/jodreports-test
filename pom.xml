@@ -31,7 +31,7 @@
 
   <groupId>org.jodreports</groupId>
   <artifactId>jodreports-test</artifactId>
-  <version>3.0.1</version>
+  <version>3.0.1-SNAPSHOT</version>
 
   <name>JODReports :: Testing</name>
   <description>A java library providing test superclasses and utilities to perform unit-testing of documents generated with JODReports.</description>

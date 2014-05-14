@@ -23,16 +23,28 @@ import org.fest.assertions.Assertions;
 import org.fest.assertions.GenericAssert;
 import org.jodreports.test.simpleodfextensions.TextReference;
 
+import static org.fest.assertions.Formatting.format;
+
 public class TextReferenceAssert extends GenericAssert<TextReferenceAssert, TextReference> {
 
   public TextReferenceAssert(TextReference textReference) {
     super(TextReferenceAssert.class, textReference);
   }
 
-  public void showsText(String expected) {
+  public TextReferenceAssert exists() {
+    isNotNull();
+    if (actual.exists()) {
+      return myself;
+    }
+    failIfCustomMessageIsSet();
+    throw failure(format("Text reference with name <%s> should exist.", actual.getName()));
+  }
+
+  public TextReferenceAssert showsText(String expected) {
     String textContent = actual.getTextContent();
     Assertions.assertThat(textContent).isEqualTo(expected);
 
     DocumentAssertions.assertThat(actual.getStylableElement()).isDisplayed();
+    return myself;
   }
 }

@@ -53,6 +53,10 @@ public class TextReference {
     return name;
   }
 
+  void setName(String name) {
+    this.name = name;
+  }
+
   public String getTextContent() {
     collectTextContent(startNode);
     return textContentBuilder.toString();
@@ -96,24 +100,28 @@ public class TextReference {
     }
   }
 
-  public static final TextReference UNDEFINED = new TextReference() {
-    @Override
-    public boolean exists() {
-      return false;
-    }
+  private static final UnsupportedOperationException bomb() {
+    return new UnsupportedOperationException("Not supported for TextReference");
+  }
 
-    @Override
-    public String getTextContent() {
-      throw bomb();
-    }
+  public static final TextReference NAMED(String name) {
+    TextReference namedReference = new TextReference() {
+      @Override
+      public boolean exists() {
+        return false;
+      }
+      @Override
+      public String getTextContent() {
+        throw bomb();
+      }
 
-    @Override
-    public OdfStylableElement getStylableElement() {
-      throw bomb();
-    }
+      @Override
+      public OdfStylableElement getStylableElement() {
+        throw bomb();
+      }
+    };
 
-    private UnsupportedOperationException bomb() {
-      return new UnsupportedOperationException("Not supported for UNDEFINED TextReference");
-    }
-  };
+    namedReference.setName(name);
+    return namedReference;
+  }
 }

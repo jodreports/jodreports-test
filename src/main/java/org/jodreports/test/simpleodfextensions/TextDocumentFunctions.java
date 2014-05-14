@@ -50,7 +50,7 @@ public class TextDocumentFunctions {
       return filteredReferences.iterator().next();
     }
     else {
-      return TextReference.UNDEFINED;
+      return TextReference.NAMED(referenceName);
     }
   }
 }

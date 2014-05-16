@@ -21,6 +21,9 @@ package org.jodreports.test.assertions;
 
 import org.fest.assertions.Assertions;
 import org.fest.assertions.GenericAssert;
+import org.jodreports.test.simpleodfextensions.TextDocumentFunctions;
+import org.jodreports.test.simpleodfextensions.TextReference;
+import org.jodreports.test.simpleodfextensions.TextReferenceExtractor;
 import org.odftoolkit.simple.TextDocument;
 import org.odftoolkit.simple.table.Table;
 import org.odftoolkit.simple.text.Section;
@@ -65,5 +68,15 @@ public class TextDocumentAssert extends GenericAssert<TextDocumentAssert, TextDo
         .overridingErrorMessage("Expected section named '" + sectionName + "' to be excluded from document, but is present.")
         .isNull();
     return myself;
+  }
+
+  public TextReferenceAssert containsTextReference(String referenceName) {
+    TextReference textReference = TextDocumentFunctions.getTextReferenceByName(actual, referenceName);
+    Assertions
+        .assertThat(textReference.exists())
+        .overridingErrorMessage("Document should contain text reference with name <'" + referenceName + "'>, but no such reference found.")
+        .isTrue();
+
+    return new TextReferenceAssert(textReference);
   }
 }

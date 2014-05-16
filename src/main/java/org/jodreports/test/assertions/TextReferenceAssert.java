@@ -47,4 +47,12 @@ public class TextReferenceAssert extends GenericAssert<TextReferenceAssert, Text
     DocumentAssertions.assertThat(actual.getStylableElement()).isDisplayed();
     return myself;
   }
+
+  /**
+   * Pure syntactic sugar to concatenate {@link TextDocumentAssert#containsTextReference(String)} with
+   * {@link TextReferenceAssert} assertion methods.
+   */
+  public TextReferenceAssert which() {
+    return myself;
+  }
 }
